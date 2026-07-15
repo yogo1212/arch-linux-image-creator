@@ -12,7 +12,7 @@ EOF
 
 if [ -n "$ALARM_EFI_PKG" ]; then
 	# this does a trimmed-down version of what kernel-install does (depending on mkinitcpio instead of dracut)
-	pacman --noconfirm -U "/mnt/$ALARM_EFI_PKG"
+	pacman --noconfirm --disable-sandbox -U "/mnt/$ALARM_EFI_PKG"
 
 	/usr/bin/alarm-efi-update files <<EOF
 boot/Image

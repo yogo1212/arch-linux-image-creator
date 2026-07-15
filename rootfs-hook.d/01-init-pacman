@@ -8,6 +8,6 @@ if [ "$ARCH" = aarch64 ]; then
 	killall gpg-agent
 fi
 
-pacman --noconfirm -Sy
+pacman --noconfirm --disable-sandbox -Sy
 
-[ -z "$PACMAN_UPDATE" ] || pacman --noconfirm -Su
+[ -z "$PACMAN_UPDATE" ] || pacman --disable-sandbox --noconfirm -Su

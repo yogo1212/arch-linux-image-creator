@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pacman --noconfirm -S --needed networkmanager
+pacman --noconfirm --disable-sandbox -S --needed networkmanager

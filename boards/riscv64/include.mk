@@ -1,4 +1,4 @@
-export CROSS_COMPILE := riscv64-linux-gnu-
+export CROSS_COMPILE ?= riscv64-linux-gnu-
 
 ARCH_LINUX_MIRROR = https://riscv.mirror.pkgbuild.com
 ARCH_LINUX_MIRROR_BASE = /repo

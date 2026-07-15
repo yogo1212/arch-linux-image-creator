@@ -62,7 +62,7 @@ include ./boards/$(ARCH)/$(DEVICE)/recipes.mk
 endif
 
 $(BASE_ROOTFS_TAR): | $(DL_DIR)
-	wget -O $@ $(BASE_ROOTFS_URL)
+	wget -cO $@ $(BASE_ROOTFS_URL)
 
 $(BUILD_DIR) $(DL_DIR):
 	mkdir -p $@
@@ -77,7 +77,7 @@ $(LINUX_PKG): $(REPO_DB) | $(DL_DIR)
 		file_sha256sum="$$(sha256sum $@ | awk '{ print $$1 }')" ; \
 		[ "$$file_sha256sum" = "$$pkg_sha256sum" ] && exit ; \
 		pkg_filename="$$(tar -xOf $(REPO_DB) "$$(tar -tf $(REPO_DB) | grep -E '^linux-[[:digit:]].*/desc')" | awk '/%FILENAME%/{getline; print}')" ; \
-		wget -O $@ "$(ARCH_LINUX_MIRROR)$(ARCH_LINUX_MIRROR_BASE)/core/$$pkg_filename"
+		wget -cO $@ "$(ARCH_LINUX_MIRROR)$(ARCH_LINUX_MIRROR_BASE)/core/$$pkg_filename"
 
 $(PACMAN_CACHE_DIR): | $(DL_DIR)
 	mkdir $@
@@ -86,7 +86,7 @@ $(PACMAN_CACHE_SUBDIRS): | $(PACMAN_CACHE_DIR)
 	mkdir $@
 
 $(REPO_DB): | $(DL_DIR)
-	wget -O $@ $(REPO_DB_URL)
+	wget -cO $@ $(REPO_DB_URL)
 
 .PHONY: rootfs
 rootfs: $(ROOTFS_IMG)

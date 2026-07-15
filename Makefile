@@ -76,7 +76,7 @@ $(LINUX_PKG): $(REPO_DB) | $(DL_DIR)
 		pkg_sha256sum="$$(tar -xOf $(REPO_DB) "$$desc_file" | awk '/%SHA256SUM%/{getline; print}')" ; \
 		file_sha256sum="$$(sha256sum $@ | awk '{ print $$1 }')" ; \
 		[ "$$file_sha256sum" = "$$pkg_sha256sum" ] && exit ; \
-		pkg_filename="$$(tar -xOf $(REPO_DB) "$$(tar -tf $(REPO_DB) | grep -E '^linux-[[:digit:]].*/desc')" | awk '/%FILENAME%/{getline; print}')" ; \
+		pkg_filename="$$(tar -xOf $(REPO_DB) "$$desc_file" | awk '/%FILENAME%/{getline; print}')" ; \
 		wget -cO $@ "$(ARCH_LINUX_MIRROR)$(ARCH_LINUX_MIRROR_BASE)/core/$$pkg_filename"
 
 $(PACMAN_CACHE_DIR): | $(DL_DIR)

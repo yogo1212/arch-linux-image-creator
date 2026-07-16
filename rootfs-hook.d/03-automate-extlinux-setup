@@ -5,5 +5,5 @@
 pacman --noconfirm --disable-sandbox -S --needed dracut
 pacman --noconfirm --disable-sandbox -U "/mnt/$STAR64_EXTLINUX_PKG"
 
-# this triggers a hook which sets up extlinux.conf
-pacman --noconfirm --disable-sandbox -U "/mnt/$LINUX_PKG"
+# run once manually
+/usr/bin/create_uboot_extlinux_conf

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # TODO might have to sanitise this
 echo "${IMG_HOSTNAME-$DEVICE}" > /etc/hostname

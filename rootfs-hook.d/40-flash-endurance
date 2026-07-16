@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 echo "Setting journal storage type to volatile"
 mkdir /etc/systemd/journald.conf.d/

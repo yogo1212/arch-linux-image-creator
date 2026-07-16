@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 [ -n "$STAR64_EXTLINUX_PKG" ] || exit 0
 

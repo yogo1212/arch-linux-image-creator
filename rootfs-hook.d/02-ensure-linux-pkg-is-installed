@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # the riscv64 base image doesn't include a kernel
 [ "$ARCH" = riscv64 ] || exit 0

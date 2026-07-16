@@ -8,7 +8,7 @@ license=('GPL2')
 depends=('dracut')
 source=('create_uboot_extlinux_conf' \
         'libalpm.hook')
-sha256sums=('de2a3a824913d346814fd2c8905e40f166c6f5186c52bd32051cd5152f84acc8' \
+sha256sums=('6e5b1975bfd50530385c1c2e64263553864b57b92ffc5b686da8b3dc4df00ef9' \
             '46412c74e949ff8937419d3543bff617d93afb18169e23ac5e3a640c985eb0cb')
 
 package() {

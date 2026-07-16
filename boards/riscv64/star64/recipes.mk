@@ -9,7 +9,8 @@ opensbi: $(OPENSBI_BIN)
 $(OPENSBI_BIN): | $(OPENSBI_CLONE)
 	# TODO update?
 	#git -C $(OPENSBI_CLONE) ls-remote --refs --sort="version:refname" --tags $(OPENSBI_GIT) | cut -d/ -f3-|tail -n1
-	make -C $(OPENSBI_CLONE) PLATFORM=generic FW_TEXT_START=0x40000000
+	make -C $(OPENSBI_CLONE) clean
+	make -C $(OPENSBI_CLONE) PLATFORM=generic
 
 $(OPENSBI_CLONE): | $(BUILD_DIR)
 	git clone $(OPENSBI_GIT) $(OPENSBI_CLONE)

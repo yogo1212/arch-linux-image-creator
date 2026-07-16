@@ -1,3 +1,5 @@
 #!/bin/sh
 
 pacman --noconfirm --disable-sandbox -S --needed networkmanager
+
+systemctl enable NetworkManager

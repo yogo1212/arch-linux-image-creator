@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -n "$WANT_WIFI_REGDB" ] || exit 0
+
+pacman --noconfirm --disable-sandbox -S --needed wireless-regdb
